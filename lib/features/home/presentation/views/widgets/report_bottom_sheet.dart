@@ -37,6 +37,7 @@ class _ReportBottomSheetState extends State<ReportBottomSheet> {
       listener: (context, state) {
         if (state is ReportSuccessState) {
           showSuccessSnackBar(context: context, message: state.message);
+          Navigator.pop(context);
         } else if (state is ReportFailureState) {
           showErrorSnackBar(context: context, message: state.error);
         }

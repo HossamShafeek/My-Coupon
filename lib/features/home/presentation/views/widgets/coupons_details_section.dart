@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:my_coupon/core/utils/app_colors.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
@@ -29,9 +30,18 @@ class CouponDetailsSection extends StatelessWidget {
             style: AppStyles.styleBold30White,
           ),
           Gap(AppConstants.size8h),
-          Text(
-            couponModel.description,
-            style: AppStyles.styleRegular18White,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                couponModel.code,
+                style: AppStyles.styleRegular18White,
+              ),
+              Text(
+                couponModel.description,
+                style: AppStyles.styleRegular18White,
+              ),
+            ],
           ),
           Gap(AppConstants.size15h),
           const CustomHorizontalSeparator(color: AppColors.white),

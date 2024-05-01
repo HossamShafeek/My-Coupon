@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -55,5 +55,14 @@ class DetailsButtonsCubit extends Cubit<DetailsButtonsState> {
 
   void shareCoupon({required String storeUrl}) {
     Share.share(storeUrl);
+  }
+
+  void launchStoreUrl({required String storeUrl}) async {
+    final Uri uri = Uri.parse(storeUrl);
+    try {
+      await launchUrl(uri, mode: LaunchMode.inAppWebView);
+    } catch (error) {
+      emit(CanNotLaunchUrl(error.toString()));
+    }
   }
 }

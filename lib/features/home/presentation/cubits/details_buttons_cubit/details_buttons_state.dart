@@ -9,6 +9,12 @@ class CopyCouponCodeState extends DetailsButtonsState {
 }
 class ReportLoadingState extends DetailsButtonsState {}
 
+class CanNotLaunchUrl extends DetailsButtonsState {
+  final String error;
+
+  CanNotLaunchUrl(this.error);
+}
+
 class ReportSuccessState extends DetailsButtonsState {
   final String message;
 

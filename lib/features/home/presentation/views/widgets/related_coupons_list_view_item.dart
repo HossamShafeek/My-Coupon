@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:my_coupon/config/routes/app_routes.dart';
 import 'package:my_coupon/core/utils/app_colors.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 import 'package:my_coupon/core/utils/app_styles.dart';
@@ -15,37 +16,45 @@ class RelatedCouponsListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: AppConstants.size10h),
-      height: 80.h,
-      width: 150.h,
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(AppConstants.radius10r),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: AppConstants.size10h),
-              child: CustomNetworkImage(image: couponModel.imageUrl),
-            ),
-          ),
-          Gap(AppConstants.size10w),
-          const CustomVerticalSeparator(),
-          Gap(AppConstants.size10w),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: AppConstants.size10h),
-              child: Text(
-                couponModel.title,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: AppStyles.styleBold16Black,
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.couponDetailsView,
+          arguments: couponModel,).then((value) {
+          Navigator.pop(context);
+        });
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: AppConstants.size10h),
+        height: 80.h,
+        width: 150.h,
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(AppConstants.radius10r),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: AppConstants.size10h),
+                child: CustomNetworkImage(image: couponModel.imageUrl),
               ),
             ),
-          ),
-        ],
+            Gap(AppConstants.size10w),
+            const CustomVerticalSeparator(),
+            Gap(AppConstants.size10w),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: AppConstants.size10h),
+                child: Text(
+                  couponModel.title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppStyles.styleBold16Black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
