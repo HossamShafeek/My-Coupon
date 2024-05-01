@@ -62,7 +62,7 @@ class DetailsButtonsCubit extends Cubit<DetailsButtonsState> {
     try {
       await launchUrl(uri, mode: LaunchMode.inAppWebView);
     } catch (error) {
-      emit(CanNotLaunchUrl(error.toString()));
+      emit(CanNotLaunchUrl('يوجد مشكلة في رابط المتجر'));
     }
   }
 }
