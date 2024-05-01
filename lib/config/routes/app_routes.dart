@@ -13,7 +13,6 @@ import 'package:my_coupon/features/authentication/presentation/views/register_vi
 import 'package:my_coupon/features/home/data/models/categories_model/categories_model.dart';
 import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
 import 'package:my_coupon/features/home/presentation/cubits/bottom_navigation_cubit/bottom_navigation_cubit.dart';
-import 'package:my_coupon/features/home/presentation/cubits/details_buttons_cubit/details_buttons_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/sliders_cubit/sliders_cubit.dart';
 import 'package:my_coupon/features/home/presentation/views/all_offers_view.dart';
 import 'package:my_coupon/features/home/presentation/views/categories_view.dart';

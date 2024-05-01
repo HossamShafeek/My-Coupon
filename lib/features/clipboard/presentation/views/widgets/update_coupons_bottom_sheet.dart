@@ -11,7 +11,7 @@ import 'package:my_coupon/features/clipboard/presentation/cubits/clipboard_cubit
 import 'package:my_coupon/features/clipboard/presentation/cubits/clipboard_cubit/clipboard_state.dart';
 import 'package:my_coupon/features/clipboard/presentation/views/widgets/category_dropdown.dart';
 import 'package:my_coupon/features/clipboard/presentation/views/widgets/expiration_date.dart';
-import 'package:my_coupon/features/clipboard/presentation/views/widgets/update_Coupons_texts_fields.dart';
+import 'package:my_coupon/features/clipboard/presentation/views/widgets/update_coupons_texts_fields.dart';
 import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
 import 'package:my_coupon/features/home/presentation/cubits/coupons_cubit/coupons_cubit.dart';
 

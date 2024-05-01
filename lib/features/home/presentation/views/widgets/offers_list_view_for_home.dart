@@ -6,7 +6,6 @@ import 'package:my_coupon/core/shimmer/shimmer_offers_list_view.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 import 'package:my_coupon/core/utils/app_strings.dart';
 import 'package:my_coupon/core/widgets/custom_error_widget.dart';
-import 'package:my_coupon/core/widgets/loading_indicator_widget.dart';
 import 'package:my_coupon/core/widgets/title_list_and_view_all.dart';
 import 'package:my_coupon/features/home/presentation/cubits/offers_cubit/offers_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/offers_cubit/offers_state.dart';
