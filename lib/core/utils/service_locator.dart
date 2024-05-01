@@ -11,6 +11,7 @@ import 'package:my_coupon/features/home/data/repository/home_repository_implemen
 import 'package:my_coupon/features/home/presentation/cubits/bottom_navigation_cubit/bottom_navigation_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/categories_cubit/categories_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/coupons_cubit/coupons_cubit.dart';
+import 'package:my_coupon/features/home/presentation/cubits/details_buttons_cubit/details_buttons_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/offers_cubit/offers_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/sliders_cubit/sliders_cubit.dart';
 import 'package:my_coupon/features/menu/data/repository/menu_repository_implementation.dart';
@@ -41,6 +42,8 @@ void setupServiceLocator() {
       () => CategoriesCubit(getIt.get<HomeRepositoryImplementation>()));
   getIt.registerFactory(
       () => CouponsCubit(getIt.get<HomeRepositoryImplementation>()));
+  getIt.registerFactory(
+      () => DetailsButtonsCubit(getIt.get<HomeRepositoryImplementation>()));
   //Menu Repo ( Profile Cubit )
   getIt.registerSingleton<MenuRepositoryImplementation>(
     MenuRepositoryImplementation()

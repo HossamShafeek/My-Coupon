@@ -11,10 +11,13 @@ import 'package:my_coupon/features/authentication/presentation/views/forgot_pass
 import 'package:my_coupon/features/authentication/presentation/views/login_view.dart';
 import 'package:my_coupon/features/authentication/presentation/views/register_view.dart';
 import 'package:my_coupon/features/home/data/models/categories_model/categories_model.dart';
+import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
 import 'package:my_coupon/features/home/presentation/cubits/bottom_navigation_cubit/bottom_navigation_cubit.dart';
+import 'package:my_coupon/features/home/presentation/cubits/details_buttons_cubit/details_buttons_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/sliders_cubit/sliders_cubit.dart';
 import 'package:my_coupon/features/home/presentation/views/all_offers_view.dart';
 import 'package:my_coupon/features/home/presentation/views/categories_view.dart';
+import 'package:my_coupon/features/home/presentation/views/coupon_details_view.dart';
 import 'package:my_coupon/features/home/presentation/views/coupons_view.dart';
 import 'package:my_coupon/features/home/presentation/views/layout_view.dart';
 import 'package:my_coupon/features/splash/presentation/views/splash_view.dart';
@@ -35,6 +38,7 @@ class Routes {
   static const String layoutView = '/layout_view';
   static const String categoriesView = '/categories_view';
   static const String couponsView = '/coupons_view';
+  static const String couponDetailsView = '/coupon_details_view';
   static const String allOffersView = '/all_offers_view';
 }
 
@@ -90,6 +94,12 @@ class AppRoutes {
         return PageSlideTransition(
           direction: AxisDirection.right,
           page:   const AllOffersView(),
+        );
+        case Routes.couponDetailsView:
+          final coupon = settings.arguments as CouponModel;
+        return PageSlideTransition(
+          direction: AxisDirection.right,
+          page:    CouponDetailsView(couponModel: coupon),
         );
     }
     return undefinedRoute();

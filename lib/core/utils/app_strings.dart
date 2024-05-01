@@ -19,6 +19,7 @@ class AppStrings {
   static const String doYouHaveACoupon = 'عندك كوبون؟';
   static const String doYouHaveACouponDescription = 'تعال علي المنصة وضيف كوبونك وتستفيد من منصة كوبوني.';
 
+  static const String details = 'التفاصيل';
   static const String myCoupon = 'كوبوني';
   static const String menu = 'القائمة';
   static const String favorites = 'المفضلة';
@@ -33,6 +34,12 @@ class AppStrings {
   static const String updateCoupon = 'تعديل كوبون';
   static const String addCouponSubtitle = 'ضيف كوبونك عشان تستفيد';
   static const String searchHintText = 'أدخل اسم الشركة للبحث...';
+  static const String goToShop = 'الذهاب الي المتجر';
+  static const String relatedCoupons = 'كوبونات ذات صلة';
+  static const String share = 'مشاركة';
+  static const String report = 'إبلاغ';
+  static const String reportOnCoupon = 'الأبلاغ عن كوبون';
+  static const String copy = 'نسخ';
 
   static const String email = 'البريد الالكتروني';
   static const String enterYourEmail = 'أدخل البريد الالكتروني';
@@ -69,6 +76,9 @@ class AppStrings {
   static const String expirationDate = 'تاريخ الانتهاء';
   static const String enterExpirationDate= 'أدخل تاريخ الانتهاء';
   static const String pleaseEnterExpirationDate = 'من فضلك أدخل تاريخ الانتهاء';
+  static const String reportContent= 'محتوي البلاغ';
+  static const String enterReportContent= 'أدخل محتوي البلاغ';
+  static const String pleaseEnterReportContent = 'من فضلك أدخل محتوي البلاغ';
 
   static const String categoryName = 'اسم القسم';
   static const String selectCategoryName = 'أختر اسم القسم';

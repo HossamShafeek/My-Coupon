@@ -21,3 +21,4 @@ class CouponsFailureState extends CouponsState {
 class GetSearchedCouponsList extends CouponsState {}
 
 class CouponsChangeIsSearchingState extends CouponsState {}
+

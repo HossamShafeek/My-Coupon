@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:my_coupon/config/routes/app_routes.dart';
 import 'package:my_coupon/core/utils/app_colors.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 import 'package:my_coupon/core/utils/app_styles.dart';
 import 'package:my_coupon/core/widgets/add_and_remove_from_favourites_button.dart';
 import 'package:my_coupon/core/widgets/custom_network_image.dart';
-import 'package:my_coupon/core/widgets/separator_widget.dart';
+import 'package:my_coupon/core/widgets/vertical_separator.dart';
 import 'package:my_coupon/features/clipboard/presentation/views/widgets/custom_slidable_widget.dart';
 import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
 
@@ -19,7 +20,7 @@ class ClipboardCouponsListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //Navigator.pushNamed(context, Routes.productDetailsView, arguments: product);
+        Navigator.pushNamed(context, Routes.couponDetailsView, arguments: couponModel);
       },
       child: CustomSlidableWidget(
         couponModel: couponModel,
@@ -44,7 +45,7 @@ class ClipboardCouponsListViewItem extends StatelessWidget {
                 ),
               ),
               Gap(AppConstants.size10w),
-              const MySeparator(),
+              const CustomVerticalSeparator(),
               Gap(AppConstants.size10w),
               Expanded(
                 flex: 11,

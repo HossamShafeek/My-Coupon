@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:my_coupon/core/errors/failures.dart';
 import 'package:my_coupon/features/home/data/models/categories_model/categories_model.dart';
 import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
+import 'package:my_coupon/features/home/data/models/report_model/report_model.dart';
 import 'package:my_coupon/features/home/data/models/slider_model/slider_model.dart';
 import 'package:my_coupon/features/home/data/repository/home_repository.dart';
 
@@ -66,6 +67,20 @@ class HomeRepositoryImplementation extends HomeRepository {
         return CouponModel.fromJson(coupon.data());
       }).toList();
       return Right(coupons);
+    } on FirebaseException catch (error) {
+      return Left(ServerFailure(error.toString()));
+    } catch (error) {
+      return Left(ServerFailure(error.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String>> sentReportOnCoupon({
+    required ReportModel reportModel,
+}) async{
+    try {
+      await firebaseFirestore.collection('Reports').doc().set(reportModel.toJson());
+      return const Right('تم إرسال بلاغك بنجاح');
     } on FirebaseException catch (error) {
       return Left(ServerFailure(error.toString()));
     } catch (error) {

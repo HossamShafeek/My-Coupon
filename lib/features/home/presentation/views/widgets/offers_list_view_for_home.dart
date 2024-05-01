@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:my_coupon/config/routes/app_routes.dart';
+import 'package:my_coupon/core/shimmer/shimmer_offers_list_view.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 import 'package:my_coupon/core/utils/app_strings.dart';
 import 'package:my_coupon/core/widgets/custom_error_widget.dart';
@@ -33,7 +34,7 @@ class OffersListViewForHome extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 padding:
-                    EdgeInsets.only(bottom: AppConstants.defaultPadding),
+                EdgeInsets.only(bottom: AppConstants.defaultPadding),
                 itemBuilder: (context, index) {
                   return OffersListViewItem(
                     offerModel: OffersCubit.get(context).offers[index],
@@ -51,7 +52,7 @@ class OffersListViewForHome extends StatelessWidget {
         } else if (state is OffersFailureState) {
           return CustomErrorWidget(error: state.error);
         } else {
-          return const LoadingIndicatorWidget();
+          return const ShimmerOffersListView();
         }
       },
     );

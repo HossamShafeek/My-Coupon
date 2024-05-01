@@ -8,6 +8,7 @@ import 'package:my_coupon/core/utils/service_locator.dart';
 import 'package:my_coupon/features/favorites/presentation/cubits/favorites_cubit/favorites_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/categories_cubit/categories_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/coupons_cubit/coupons_cubit.dart';
+import 'package:my_coupon/features/home/presentation/cubits/details_buttons_cubit/details_buttons_cubit.dart';
 import 'package:my_coupon/features/home/presentation/cubits/offers_cubit/offers_cubit.dart';
 import 'package:my_coupon/features/menu/presentation/cubits/profile_cubit/profile_cubit.dart';
 import 'features/clipboard/presentation/cubits/clipboard_cubit/clipboard_cubit.dart';
@@ -30,6 +31,7 @@ class MyCoupon extends StatelessWidget {
             BlocProvider(create: (context) => getIt.get<CategoriesCubit>(),),
             BlocProvider(create: (context) => getIt.get<CouponsCubit>(),),
             BlocProvider(create: (context) => getIt.get<ProfileCubit>(),),
+            BlocProvider(create: (context) => getIt.get<DetailsButtonsCubit>()),
           ],
           child: MaterialApp(
             builder: (context, child) {

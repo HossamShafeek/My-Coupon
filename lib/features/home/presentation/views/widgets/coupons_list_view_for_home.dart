@@ -34,7 +34,7 @@ class CouponsListViewForHome extends StatelessWidget {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => CouponsListViewItem(
-                  coupon: CouponsCubit.get(context).coupons[index],
+                  couponModel: CouponsCubit.get(context).coupons[index],
                 ),
                 separatorBuilder: (context, index) => Gap(AppConstants.size10h),
                 itemCount: CouponsCubit.get(context).coupons.length >= 5

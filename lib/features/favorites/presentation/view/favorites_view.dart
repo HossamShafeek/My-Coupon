@@ -21,7 +21,7 @@ class FavoritesView extends StatelessWidget {
             padding: EdgeInsets.all(AppConstants.defaultPadding),
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) {
-              return CouponsListViewItem(coupon: cubits.favorites[index]);
+              return CouponsListViewItem(couponModel: cubits.favorites[index]);
             },
             separatorBuilder: (context, index) {
               return SizedBox(

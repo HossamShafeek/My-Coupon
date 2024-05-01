@@ -24,7 +24,7 @@ class CouponsViewBody extends StatelessWidget {
             itemCount: coupons.length,
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) => CouponsListViewItem(
-              coupon: coupons[index],
+              couponModel: coupons[index],
             ),
             separatorBuilder: (context, index) =>
                 SizedBox(height: AppConstants.size10h),

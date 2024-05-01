@@ -39,6 +39,7 @@ class AddCouponBottomSheet extends StatelessWidget {
           opacity: 0.5,
           child: Container(
             width: double.infinity,
+            height: MediaQuery.sizeOf(context).height/1.5,
             padding: EdgeInsets.all(AppConstants.defaultPadding),
             decoration: BoxDecoration(
               color: AppColors.background,

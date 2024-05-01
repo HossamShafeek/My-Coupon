@@ -28,6 +28,7 @@ class SlidersListView extends StatelessWidget {
                   child: CustomNetworkImage(
                     image: SlidersCubit.get(context).sliders[index].imageUlr,
                     backgroundColor: AppColors.grey50,
+                    borderRadius: AppConstants.radius10r,
                   ),
                 ),
                 options: CarouselOptions(

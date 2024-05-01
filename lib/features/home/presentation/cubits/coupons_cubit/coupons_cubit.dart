@@ -32,12 +32,12 @@ class CouponsCubit extends Cubit<CouponsState> {
   List<CouponModel> couponsByCategoryName = [];
 
   void getCouponsByCategoryName({required String categoryName}) {
-    couponsByCategoryName=[];
+    couponsByCategoryName = [];
     if (categoryName == 'الكل') {
       couponsByCategoryName = coupons;
     } else {
       coupons.map(
-            (coupon) {
+        (coupon) {
           if (coupon.categoryName == categoryName) {
             couponsByCategoryName.add(coupon);
           }
@@ -49,11 +49,10 @@ class CouponsCubit extends Cubit<CouponsState> {
   List<CouponModel> searchedCouponsList = [];
 
   void getSearchedCouponsList({required String companyName}) {
-      searchedCouponsList = couponsByCategoryName.where((element) {
-        return element.companyName.contains(companyName);
-      }).toList();
-      emit(GetSearchedCouponsList());
-
+    searchedCouponsList = couponsByCategoryName.where((element) {
+      return element.companyName.contains(companyName);
+    }).toList();
+    emit(GetSearchedCouponsList());
   }
 
   void startSearch(BuildContext context) {

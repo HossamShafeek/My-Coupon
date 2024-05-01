@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:my_coupon/core/shimmer/shimmer_container_effect.dart';
+import 'package:my_coupon/core/utils/app_colors.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 
 class ShimmerOffersListView extends StatelessWidget {
@@ -29,8 +30,14 @@ class ShimmerOffersListView extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return const AspectRatio(
-                aspectRatio: 2.2, child: ShimmerContainerEffect());
+            return  AspectRatio(
+                aspectRatio: 2.2, child: Container(
+                padding: EdgeInsets.all(AppConstants.size10h),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(AppConstants.radius10r),
+                  color: AppColors.white,
+                ),
+                child: const ShimmerContainerEffect()));
           },
           separatorBuilder: (context, index) => Gap(AppConstants.size10h),
           itemCount: 10,

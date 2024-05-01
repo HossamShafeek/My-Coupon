@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:my_coupon/config/routes/app_routes.dart';
 import 'package:my_coupon/core/utils/app_colors.dart';
 import 'package:my_coupon/core/utils/app_constants.dart';
 import 'package:my_coupon/core/utils/app_styles.dart';
 import 'package:my_coupon/core/widgets/add_and_remove_from_favourites_button.dart';
 import 'package:my_coupon/core/widgets/custom_network_image.dart';
-import 'package:my_coupon/core/widgets/separator_widget.dart';
+import 'package:my_coupon/core/widgets/vertical_separator.dart';
 import 'package:my_coupon/features/home/data/models/coupon_model/coupon_model.dart';
 
 class CouponsListViewItem extends StatelessWidget {
-  const CouponsListViewItem({super.key, required this.coupon});
+  const CouponsListViewItem({super.key, required this.couponModel});
 
-  final CouponModel coupon;
+  final CouponModel couponModel;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //Navigator.pushNamed(context, Routes.productDetailsView, arguments: product);
+        Navigator.pushNamed(context, Routes.couponDetailsView, arguments: couponModel);
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal:AppConstants.size10h),
@@ -36,12 +37,12 @@ class CouponsListViewItem extends StatelessWidget {
                 padding:  EdgeInsets.symmetric(vertical: AppConstants.size10h),
                 child: CustomNetworkImage(
                   borderRadius: AppConstants.radius8r,
-                  image:coupon.imageUrl,
+                  image:couponModel.imageUrl,
                 ),
               ),
             ),
             Gap(AppConstants.size10w),
-            const MySeparator(),
+            const CustomVerticalSeparator(),
             Gap(AppConstants.size10w),
             Expanded(
               flex: 11,
@@ -53,7 +54,7 @@ class CouponsListViewItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        coupon.title,
+                        couponModel.title,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 1,
                         style: AppStyles.styleBold18White.copyWith(
@@ -62,7 +63,7 @@ class CouponsListViewItem extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      coupon.companyName,
+                      couponModel.companyName,
                       style: AppStyles.styleRegular16Black.copyWith(
                         color: AppColors.grey,
                       ),
@@ -71,7 +72,7 @@ class CouponsListViewItem extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            coupon.description,
+                            couponModel.description,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: AppStyles.styleRegular16Black.copyWith(
@@ -79,7 +80,7 @@ class CouponsListViewItem extends StatelessWidget {
                             ),
                           ),
                         ),
-                        AddAndRemoveFromFavoritesButton(couponModel: coupon,),
+                        AddAndRemoveFromFavoritesButton(couponModel: couponModel,),
                       ],
                     ),
                   ],
