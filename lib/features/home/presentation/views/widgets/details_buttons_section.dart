@@ -22,11 +22,11 @@ class DetailsButtonsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<DetailsButtonsCubit,DetailsButtonsState>(
+    return BlocConsumer<DetailsButtonsCubit, DetailsButtonsState>(
       listener: (context, state) {
-        if(state is CopyCouponCodeState){
+        if (state is CopyCouponCodeState) {
           showSuccessSnackBar(context: context, message: state.message);
-        }else if(state is CanNotLaunchUrl){
+        } else if (state is CanNotLaunchUrl) {
           showErrorSnackBar(context: context, message: state.error);
         }
       },
@@ -41,9 +41,7 @@ class DetailsButtonsSection extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                DetailsFavoriteButton(
-                  couponModel: couponModel,
-                ),
+                DetailsFavoriteButton(couponModel: couponModel),
                 DetailsCopyButton(couponModel: couponModel),
                 DetailsShareButton(couponModel: couponModel),
                 DetailsReportButton(couponModel: couponModel),

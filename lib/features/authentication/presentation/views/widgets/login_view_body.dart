@@ -49,7 +49,6 @@ class LoginViewBody extends StatelessWidget {
                     Gap(AppConstants.size30h),
                     const Center(child: LogoTextWidget()),
                     const Gap(50),
-
                     const TitleAndSubtitle(
                       subtitle: AppStrings.signInSubtitle,
                       title: AppStrings.signIn,

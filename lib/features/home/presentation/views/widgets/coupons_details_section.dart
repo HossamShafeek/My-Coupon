@@ -27,7 +27,10 @@ class CouponDetailsSection extends StatelessWidget {
           Gap(AppConstants.size15h),
           Text(
             couponModel.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: AppStyles.styleBold30White,
+            textAlign: TextAlign.center,
           ),
           Gap(AppConstants.size8h),
           Row(

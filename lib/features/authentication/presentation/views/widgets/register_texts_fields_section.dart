@@ -70,7 +70,6 @@ class RegisterTextsFieldsSection extends StatelessWidget {
                 title: AppStrings.email,
                 hintText: AppStrings.enterYourEmail,
               ),
-
               CustomTextField(
                 textInputType: TextInputType.visiblePassword,
                 obscureText:
@@ -102,7 +101,6 @@ class RegisterTextsFieldsSection extends StatelessWidget {
                 title: AppStrings.password,
                 hintText: AppStrings.enterYourPassword,
               ),
-
             ],
           ),
         );

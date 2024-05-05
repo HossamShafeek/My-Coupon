@@ -10,17 +10,19 @@ class AuthenticationRepositoryImplementation extends AuthenticationRepository {
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   @override
-  Future<Either<Failure, User>> registerWithEmailAndPassword(
-      {required String email, required String password}) async{
+  Future<Either<Failure, User>> registerWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
     try {
       User? user = (await firebaseAuth.createUserWithEmailAndPassword(
-      email: email, password: password))
-        .user;
-    return Right(user!);
+              email: email, password: password))
+          .user;
+      return Right(user!);
     } on FirebaseException catch (error) {
-    return Left(ServerFailure(error.message.toString()));
+      return Left(ServerFailure(error.message.toString()));
     } catch (error) {
-    return Left(ServerFailure(error.toString()));
+      return Left(ServerFailure(error.toString()));
     }
   }
 
@@ -63,12 +65,12 @@ class AuthenticationRepositoryImplementation extends AuthenticationRepository {
   }) async {
     try {
       await firebaseAuth.sendPasswordResetEmail(email: email);
-      return const Right('تم ارسال رابط استعادة كلمة المرور الي بريدك الالكتروني');
+      return const Right(
+          'تم ارسال رابط استعادة كلمة المرور الي بريدك الالكتروني');
     } on FirebaseException catch (error) {
       return Left(ServerFailure(error.message.toString()));
     } catch (error) {
       return Left(ServerFailure(error.toString()));
     }
   }
-
 }
