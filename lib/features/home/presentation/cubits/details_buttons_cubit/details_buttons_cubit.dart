@@ -60,7 +60,7 @@ class DetailsButtonsCubit extends Cubit<DetailsButtonsState> {
   void launchStoreUrl({required String storeUrl}) async {
     final Uri uri = Uri.parse(storeUrl);
     try {
-      await launchUrl(uri, mode: LaunchMode.inAppWebView);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } catch (error) {
       emit(CanNotLaunchUrl('يوجد مشكلة في رابط المتجر'));
     }
